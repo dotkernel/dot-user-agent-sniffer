@@ -26,7 +26,7 @@ class DeviceServiceFactory
     public function __invoke(ContainerInterface $container): DeviceService
     {
         return new DeviceService(
-            $container->get(DeviceDetector::class)
+            new DeviceDetector()
         );
     }
 }

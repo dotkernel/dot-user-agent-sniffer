@@ -42,7 +42,7 @@ class MyService
     }
 
     /**
-     * @param string $userAgent\
+     * @param string $userAgent
      */
     public function myMethod(string $userAgent)
     {
@@ -50,3 +50,4 @@ class MyService
         // add logic here...
     }
 }
+```
