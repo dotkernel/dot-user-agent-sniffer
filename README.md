@@ -12,7 +12,7 @@ $ composer require dotkernel/dot-user-agent-sniffer
 Before adding this library as a dependency to your service, you need to add `Dot\UserAgentSniffer\ConfigProvider::class,` to your application's `config/config.php` file.
 
 
-## Implementation example
+## Usage example
 
 ```php
 <?php
@@ -21,6 +21,7 @@ declare(strict_types=1);
 
 namespace Api\Example\Service;
 
+use Dot\UserAgentSniffer\Data\DeviceData;
 use Dot\UserAgentSniffer\Service\DeviceServiceInterface;
 
 /**
@@ -43,11 +44,62 @@ class MyService
 
     /**
      * @param string $userAgent
+     * @return DeviceData
      */
     public function myMethod(string $userAgent)
     {
-        $details = $this->deviceService->getDetails($userAgent);
-        // add logic here...
+        return $this->deviceService->getDetails($userAgent);
     }
 }
+```
+
+
+When called with an `$userAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/78.0.3904.84 Mobile/15E148 Safari/604.1'`, `myMethod($userAgent)` returns an object with the following structure:
+
+```php
+Dot\UserAgentSniffer\Data\DeviceData::__set_state(array(
+    'type' => 'smartphone',
+    'brand' => 'Apple',
+    'model' => 'iPhone',
+    'isBot' => false,
+    'isMobile' => true,
+    'os' =>
+      Dot\UserAgentSniffer\Data\OsData::__set_state(array(
+        'name' => 'iOS',
+        'version' => '13.2',
+        'platform' => '',
+    )),
+    'client' =>
+      Dot\UserAgentSniffer\Data\ClientData::__set_state(array(
+        'type' => 'browser',
+        'name' => 'Chrome Mobile iOS',
+        'engine' => 'WebKit',
+        'version' => '78.0',
+    )),
+))
+```
+
+The above call can also be chained as `myMethod($userAgent)->getArrayCopy()`, to retrieve the details as an array:
+
+```php
+array (
+    'type' => 'smartphone',
+    'brand' => 'Apple',
+    'model' => 'iPhone',
+    'isMobile' => true,
+    'isBot' => false,
+    'os' =>
+      array (
+        'name' => 'iOS',
+        'version' => '13.2',
+        'platform' => '',
+    ),
+    'client' =>
+      array (
+        'type' => 'browser',
+        'name' => 'Chrome Mobile iOS',
+        'engine' => 'WebKit',
+        'version' => '78.0',
+    ),
+)
 ```
