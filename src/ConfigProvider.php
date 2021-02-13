@@ -1,7 +1,7 @@
 <?php
 /**
  * @see https://github.com/dotkernel/dot-user-agent-sniffer for the canonical source repository
- * @copyright Copyright (c) 2019 Apidemia (https://www.apidemia.com)
+ * @copyright Copyright (c) 2021 Apidemia (https://www.apidemia.com)
  * @license https://github.com/dotkernel/dot-user-agent-sniffer/blob/master/LICENSE MIT License
  */
 
