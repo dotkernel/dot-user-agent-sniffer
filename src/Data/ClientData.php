@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Dot\UserAgentSniffer\Data;
 
-use Zend\Stdlib\ArraySerializableInterface;
+use Laminas\Stdlib\ArraySerializableInterface;
 
 /**
  * Class ClientData
