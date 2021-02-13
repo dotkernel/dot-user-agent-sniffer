@@ -1,3 +1,20 @@
+## 3.0.0 - 2021-02-13
+
+### Changed
+* CHANGELOG.md
+
+### Added
+* Nothing
+
+### Deprecated
+* Nothing
+
+### Removed
+* Nothing
+
+### Fixed
+* Nothing
+
 ## 0.2.0 - 2021-02-13
 
 ### Changed
