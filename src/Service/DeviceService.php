@@ -18,11 +18,10 @@ use Dot\UserAgentSniffer\Data\DeviceData;
  */
 class DeviceService implements DeviceServiceInterface
 {
-    /** @var DeviceDetector $deviceDetector */
-    protected $deviceDetector;
+    protected DeviceDetector $deviceDetector;
 
     /**
-     * UserAgentSnifferService constructor.
+     * DeviceService constructor.
      * @param DeviceDetector $deviceDetector
      */
     public function __construct(DeviceDetector $deviceDetector)
@@ -46,16 +45,8 @@ class DeviceService implements DeviceServiceInterface
             ->setModel($this->deviceDetector->getModel())
             ->setIsBot($this->deviceDetector->isBot())
             ->setIsMobile($this->deviceDetector->isMobile());
-
-        $client = $this->deviceDetector->getClient();
-        if (!empty($client)) {
-            $device->getClient()->exchangeArray($client);
-        }
-
-        $os = $this->deviceDetector->getOs();
-        if (!empty($os)) {
-            $device->getOs()->exchangeArray($os);
-        }
+        $device->getClient()->exchangeArray($this->deviceDetector->getClient());
+        $device->getOs()->exchangeArray($this->deviceDetector->getOs());
 
         return $device;
     }

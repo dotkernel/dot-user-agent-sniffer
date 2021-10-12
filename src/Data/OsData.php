@@ -17,14 +17,11 @@ use Laminas\Stdlib\ArraySerializableInterface;
  */
 class OsData implements ArraySerializableInterface
 {
-    /** @var string $name */
-    protected $name;
-
-    /** @var string $version */
-    protected $version;
-
-    /** @var string $platform */
-    protected $platform;
+    protected ?string $name = null;
+    protected ?string $shortName = null;
+    protected ?string $version = null;
+    protected ?string $platform = null;
+    protected ?string $family = null;
 
     /**
      * OsData constructor.
@@ -34,18 +31,18 @@ class OsData implements ArraySerializableInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
-     * @return OsData
+     * @param string|null $name
+     * @return $this
      */
-    public function setName(string $name): self
+    public function setName(?string $name): self
     {
         $this->name = $name;
 
@@ -53,18 +50,37 @@ class OsData implements ArraySerializableInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getVersion(): string
+    public function getShortName(): ?string
+    {
+        return $this->shortName;
+    }
+
+    /**
+     * @param string|null $shortName
+     * @return $this
+     */
+    public function setShortName(?string $shortName): self
+    {
+        $this->shortName = $shortName;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getVersion(): ?string
     {
         return $this->version;
     }
 
     /**
-     * @param string $version
-     * @return OsData
+     * @param string|null $version
+     * @return $this
      */
-    public function setVersion(string $version): self
+    public function setVersion(?string $version): self
     {
         $this->version = $version;
 
@@ -72,18 +88,18 @@ class OsData implements ArraySerializableInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPlatform(): string
+    public function getPlatform(): ?string
     {
         return $this->platform;
     }
 
     /**
-     * @param string $platform
-     * @return OsData
+     * @param string|null $platform
+     * @return $this
      */
-    public function setPlatform(string $platform): self
+    public function setPlatform(?string $platform): self
     {
         $this->platform = $platform;
 
@@ -91,15 +107,36 @@ class OsData implements ArraySerializableInterface
     }
 
     /**
-     * @param array $data
-     * @return OsData
+     * @return string|null
      */
-    public function exchangeArray(array $data): self
+    public function getFamily(): ?string
+    {
+        return $this->family;
+    }
+
+    /**
+     * @param string|null $family
+     * @return $this
+     */
+    public function setFamily(?string $family): self
+    {
+        $this->family = $family;
+
+        return $this;
+    }
+
+    /**
+     * @param array|null $data
+     * @return $this
+     */
+    public function exchangeArray(?array $data): self
     {
         return $this
-            ->setName($data['name'])
-            ->setVersion($data['version'])
-            ->setPlatform($data['platform']);
+            ->setName($data['name'] ?? null)
+            ->setShortName($data['short_name'] ?? null)
+            ->setVersion($data['version'] ?? null)
+            ->setPlatform($data['platform'] ?? null)
+            ->setFamily($data['family'] ?? null);
     }
 
     /**
@@ -109,8 +146,10 @@ class OsData implements ArraySerializableInterface
     {
         return [
             'name' => $this->getName(),
+            'shortName' => $this->getShortName(),
             'version' => $this->getVersion(),
-            'platform' => $this->getPlatform()
+            'platform' => $this->getPlatform(),
+            'family' => $this->getFamily()
         ];
     }
 }
