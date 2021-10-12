@@ -17,17 +17,13 @@ use Laminas\Stdlib\ArraySerializableInterface;
  */
 class ClientData implements ArraySerializableInterface
 {
-    /** @var string $type */
-    protected $type;
-
-    /** @var string $name */
-    protected $name;
-
-    /** @var string $engine */
-    protected $engine;
-
-    /** @var string $version */
-    protected $version;
+    protected ?string $type = null;
+    protected ?string $name = null;
+    protected ?string $shortName = null;
+    protected ?string $version = null;
+    protected ?string $engine = null;
+    protected ?string $engineVersion = null;
+    protected ?string $family = null;
 
     /**
      * ClientData constructor.
@@ -37,18 +33,18 @@ class ClientData implements ArraySerializableInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->type;
     }
 
     /**
-     * @param string $type
-     * @return ClientData
+     * @param string|null $type
+     * @return $this
      */
-    public function setType(string $type): self
+    public function setType(?string $type): self
     {
         $this->type = $type;
 
@@ -56,18 +52,18 @@ class ClientData implements ArraySerializableInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
-     * @return ClientData
+     * @param string|null $name
+     * @return $this
      */
-    public function setName(string $name): self
+    public function setName(?string $name): self
     {
         $this->name = $name;
 
@@ -75,18 +71,56 @@ class ClientData implements ArraySerializableInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getEngine(): string
+    public function getShortName(): ?string
+    {
+        return $this->shortName;
+    }
+
+    /**
+     * @param string|null $shortName
+     * @return $this
+     */
+    public function setShortName(?string $shortName): self
+    {
+        $this->shortName = $shortName;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getVersion(): ?string
+    {
+        return $this->version;
+    }
+
+    /**
+     * @param string|null $version
+     * @return $this
+     */
+    public function setVersion(?string $version): self
+    {
+        $this->version = $version;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getEngine(): ?string
     {
         return $this->engine;
     }
 
     /**
-     * @param string $engine
-     * @return ClientData
+     * @param string|null $engine
+     * @return $this
      */
-    public function setEngine(string $engine): self
+    public function setEngine(?string $engine): self
     {
         $this->engine = $engine;
 
@@ -94,20 +128,39 @@ class ClientData implements ArraySerializableInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getVersion(): string
+    public function getEngineVersion(): ?string
     {
-        return $this->version;
+        return $this->engineVersion;
     }
 
     /**
-     * @param string $version
-     * @return ClientData
+     * @param string|null $engineVersion
+     * @return $this
      */
-    public function setVersion(string $version): self
+    public function setEngineVersion(?string $engineVersion): self
     {
-        $this->version = $version;
+        $this->engineVersion = $engineVersion;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFamily(): ?string
+    {
+        return $this->family;
+    }
+
+    /**
+     * @param string|null $family
+     * @return $this
+     */
+    public function setFamily(?string $family): self
+    {
+        $this->family = $family;
 
         return $this;
     }
@@ -119,10 +172,13 @@ class ClientData implements ArraySerializableInterface
     public function exchangeArray(?array $data): self
     {
         return $this
-            ->setType($data['type'])
-            ->setName($data['name'])
-            ->setEngine($data['engine'])
-            ->setVersion($data['version']);
+            ->setType($data['type'] ?? null)
+            ->setName($data['name'] ?? null)
+            ->setShortName($data['short_name'] ?? null)
+            ->setVersion($data['version'] ?? null)
+            ->setEngine($data['engine'] ?? null)
+            ->setEngineVersion($data['engine_version'] ?? null)
+            ->setFamily($data['family'] ?? null);
     }
 
     /**
@@ -133,8 +189,11 @@ class ClientData implements ArraySerializableInterface
         return [
             'type' => $this->getType(),
             'name' => $this->getName(),
+            'shortName' => $this->getShortName(),
+            'version' => $this->getVersion(),
             'engine' => $this->getEngine(),
-            'version' => $this->getVersion()
+            'engineVersion' => $this->getEngineVersion(),
+            'family' => $this->getFamily()
         ];
     }
 }

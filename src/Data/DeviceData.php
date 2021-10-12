@@ -17,26 +17,13 @@ use Laminas\Stdlib\ArraySerializableInterface;
  */
 class DeviceData implements ArraySerializableInterface
 {
-    /** @var string $type */
-    protected $type;
-
-    /** @var string $brand */
-    protected $brand;
-
-    /** @var string $model */
-    protected $model;
-
-    /** @var bool $isBot */
-    protected $isBot;
-
-    /** @var bool $isMobile */
-    protected $isMobile;
-
-    /** @var OsData $os */
-    protected $os;
-
-    /** @var ClientData $client */
-    protected $client;
+    protected ?string $type = null;
+    protected ?string $brand = null;
+    protected ?string $model = null;
+    protected ?bool $isBot = null;
+    protected ?bool $isMobile = null;
+    protected OsData $os;
+    protected ClientData $client;
 
     /**
      * DeviceData constructor.
@@ -48,18 +35,18 @@ class DeviceData implements ArraySerializableInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->type;
     }
 
     /**
-     * @param string $type
-     * @return DeviceData
+     * @param string|null $type
+     * @return $this
      */
-    public function setType(string $type): self
+    public function setType(?string $type): self
     {
         $this->type = $type;
 
@@ -67,18 +54,18 @@ class DeviceData implements ArraySerializableInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getBrand(): string
+    public function getBrand(): ?string
     {
         return $this->brand;
     }
 
     /**
-     * @param string $brand
-     * @return DeviceData
+     * @param string|null $brand
+     * @return $this
      */
-    public function setBrand(string $brand): self
+    public function setBrand(?string $brand): self
     {
         $this->brand = $brand;
 
@@ -86,18 +73,18 @@ class DeviceData implements ArraySerializableInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getModel(): string
+    public function getModel(): ?string
     {
         return $this->model;
     }
 
     /**
-     * @param string $model
-     * @return DeviceData
+     * @param string|null $model
+     * @return $this
      */
-    public function setModel(string $model): self
+    public function setModel(?string $model): self
     {
         $this->model = $model;
 
@@ -105,18 +92,18 @@ class DeviceData implements ArraySerializableInterface
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isBot(): bool
+    public function getIsBot(): ?bool
     {
         return $this->isBot;
     }
 
     /**
-     * @param bool $isBot
-     * @return DeviceData
+     * @param bool|null $isBot
+     * @return $this
      */
-    public function setIsBot(bool $isBot): self
+    public function setIsBot(?bool $isBot): self
     {
         $this->isBot = $isBot;
 
@@ -124,18 +111,18 @@ class DeviceData implements ArraySerializableInterface
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isMobile(): bool
+    public function getIsMobile(): ?bool
     {
         return $this->isMobile;
     }
 
     /**
-     * @param bool $isMobile
-     * @return DeviceData
+     * @param bool|null $isMobile
+     * @return $this
      */
-    public function setIsMobile(bool $isMobile): self
+    public function setIsMobile(?bool $isMobile): self
     {
         $this->isMobile = $isMobile;
 
@@ -152,7 +139,7 @@ class DeviceData implements ArraySerializableInterface
 
     /**
      * @param OsData $os
-     * @return DeviceData
+     * @return $this
      */
     public function setOs(OsData $os): self
     {
@@ -171,7 +158,7 @@ class DeviceData implements ArraySerializableInterface
 
     /**
      * @param ClientData $client
-     * @return DeviceData
+     * @return $this
      */
     public function setClient(ClientData $client): self
     {
@@ -187,11 +174,11 @@ class DeviceData implements ArraySerializableInterface
     public function exchangeArray(array $data): self
     {
         return $this
-            ->setType($data['type'])
-            ->setBrand($data['brand'])
-            ->setModel($data['model'])
-            ->setIsBot($data['isBot'])
-            ->setIsMobile($data['isMobile']);
+            ->setType($data['type'] ?? null)
+            ->setBrand($data['brand'] ?? null)
+            ->setModel($data['model'] ?? null)
+            ->setIsBot($data['isBot'] ?? null)
+            ->setIsMobile($data['isMobile'] ?? null);
     }
 
     /**
