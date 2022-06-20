@@ -2,7 +2,12 @@
 DotKernel component based on [device-detector](https://github.com/matomo-org/device-detector), providing details about a device by parsing a user agent.
 
 ![OSS Lifecycle](https://img.shields.io/osslifecycle/dotkernel/dot-user-agent-sniffer)
-[![GitHub license](https://img.shields.io/github/license/dotkernel/dot-user-agent-sniffer)](https://github.com/dotkernel/dot-user-agent-sniffer/blob/3.0/LICENSE.md)
+![PHP from Packagist (specify version)](https://img.shields.io/packagist/php-v/dotkernel/dot-user-agent-sniffer/3.1.0)
+
+[![GitHub issues](https://img.shields.io/github/issues/dotkernel/dot-user-agent-sniffer)](https://github.com/dotkernel/dot-user-agent-sniffer/issues)
+[![GitHub forks](https://img.shields.io/github/forks/dotkernel/dot-user-agent-sniffer)](https://github.com/dotkernel/dot-user-agent-sniffer/network)
+[![GitHub stars](https://img.shields.io/github/stars/dotkernel/dot-user-agent-sniffer)](https://github.com/dotkernel/dot-user-agent-sniffer/stargazers)
+[![GitHub license](https://img.shields.io/github/license/dotkernel/dot-user-agent-sniffer)](https://github.com/dotkernel/dot-user-agent-sniffer/blob/3.0/LICENSE)
 
 ## Install
 
