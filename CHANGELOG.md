@@ -1,3 +1,20 @@
+## 3.1.1 - 2022-07-06
+
+### Changed
+* Update composer.json to require version 1 of psr/container.
+
+### Added
+* Nothing
+
+### Deprecated
+* Nothing
+
+### Removed
+* Nothing
+
+### Fixed
+* Nothing
+ 
 ## 3.0.1 - 2021-02-13
 
 ### Changed
