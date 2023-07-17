@@ -31,7 +31,7 @@ class DeviceService implements DeviceServiceInterface
         $this->deviceDetector->setUserAgent($userAgent);
         $this->deviceDetector->parse();
 
-        $type = $this->deviceDetector->getDeviceName();
+        $type  = $this->deviceDetector->getDeviceName();
         $brand = $this->deviceDetector->getBrandName();
         $model = $this->deviceDetector->getModel();
 
