@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace DotTest\UserAgentSniffer;
+namespace DotTest\UserAgentSniffer\Service;
 
 use DeviceDetector\DeviceDetector;
 use Dot\UserAgentSniffer\Data\DeviceData;
 use Dot\UserAgentSniffer\Service\DeviceService;
+use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 
 class DeviceServiceTest extends TestCase
@@ -16,12 +17,10 @@ class DeviceServiceTest extends TestCase
 
     private DeviceService $subject;
 
-    public function setUp(): void
-    {
-        parent::setUp();
-    }
-
-    public function testGetDetailsReturnsDeviceData()
+    /**
+     * @throws Exception
+     */
+    public function testGetDetailsReturnsDeviceData(): void
     {
         $userAgent = 'fake user agent';
 
@@ -42,7 +41,7 @@ class DeviceServiceTest extends TestCase
         $this->assertTrue($data->isMobile());
     }
 
-    public function testInvalidUserAgent()
+    public function testInvalidUserAgent(): void
     {
         $userAgent     = 'invalid user agent';
         $this->subject = new DeviceService(new DeviceDetector(), new DeviceData());
@@ -61,7 +60,7 @@ class DeviceServiceTest extends TestCase
         $this->assertFalse($data->isMobile());
     }
 
-    public function testValidUserAgent()
+    public function testValidUserAgent(): void
     {
         $userAgent     = 'Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion';
         $this->subject = new DeviceService(new DeviceDetector(), new DeviceData());
@@ -75,7 +74,7 @@ class DeviceServiceTest extends TestCase
         $this->assertFalse($data->isMobile());
     }
 
-    public function testBotUserAgent()
+    public function testBotUserAgent(): void
     {
         $userAgent     = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
         $this->subject = new DeviceService(new DeviceDetector(), new DeviceData());
