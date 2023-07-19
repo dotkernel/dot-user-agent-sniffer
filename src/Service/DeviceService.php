@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @see https://github.com/dotkernel/dot-user-agent-sniffer for the canonical source repository
- */
-
 declare(strict_types=1);
 
 namespace Dot\UserAgentSniffer\Service;
@@ -17,9 +13,6 @@ class DeviceService implements DeviceServiceInterface
 
     protected DeviceData $deviceData;
 
-    /**
-     * @Inject({DeviceService::class})
-     */
     public function __construct(DeviceDetector $deviceDetector, DeviceData $deviceData)
     {
         $this->deviceDetector = $deviceDetector;

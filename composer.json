@@ -20,9 +20,14 @@
             "Dot\\UserAgentSniffer\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "DotTest\\UserAgentSniffer\\": "test/"
+        }
+    },
     "config": {
+        "sort-packages": true,
         "allow-plugins": {
-            "laminas/laminas-dependency-plugin": true,
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },

@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Dot\tests;
+namespace DotTest\UserAgentSniffer;
 
 use DeviceDetector\DeviceDetector;
 use Dot\UserAgentSniffer\Data\DeviceData;
 use Dot\UserAgentSniffer\Service\DeviceService;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 class DeviceServiceTest extends TestCase
@@ -16,10 +15,6 @@ class DeviceServiceTest extends TestCase
     private const TYPE_BROWSER    = 'browser';
 
     private DeviceService $subject;
-
-    private DeviceDetector|MockObject $deviceDetectorMock;
-
-    private DeviceData|MockObject $deviceDataMock;
 
     public function setUp(): void
     {
@@ -30,14 +25,14 @@ class DeviceServiceTest extends TestCase
     {
         $userAgent = 'fake user agent';
 
-        $this->deviceDetectorMock = $this->createMock(DeviceDetector::class);
-        $this->deviceDataMock     = $this->createMock(DeviceData::class);
+        $deviceDetectorMock = $this->createMock(DeviceDetector::class);
+        $deviceDataMock     = $this->createMock(DeviceData::class);
 
-        $this->deviceDataMock->method('getType')->willReturn('smartphone');
-        $this->deviceDataMock->method('isMobile')->willReturn(true);
-        $this->deviceDataMock->method('isBot')->willReturn(false);
+        $deviceDataMock->method('getType')->willReturn('smartphone');
+        $deviceDataMock->method('isMobile')->willReturn(true);
+        $deviceDataMock->method('isBot')->willReturn(false);
 
-        $this->subject = new DeviceService($this->deviceDetectorMock, $this->deviceDataMock);
+        $this->subject = new DeviceService($deviceDetectorMock, $deviceDataMock);
 
         $data = $this->subject->getDetails($userAgent);
 
