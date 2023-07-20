@@ -4,23 +4,15 @@ declare(strict_types=1);
 
 namespace DotTest\UserAgentSniffer\Data;
 
-use Dot\UserAgentSniffer\Data\ClientData;
 use Dot\UserAgentSniffer\Data\OsData;
 use Laminas\Stdlib\ArraySerializableInterface;
-use PHPUnit\Framework\MockObject\Exception;
 use PHPUnit\Framework\TestCase;
 
 class OsDataTest extends TestCase
 {
-    /**
-     * @throws Exception
-     */
     public function setUp(): void
     {
         $this->subject = new OsData();
-
-        $this->osData     = $this->createMock(OsData::class);
-        $this->clientData = $this->createMock(ClientData::class);
     }
 
     public function testObjectImplementsArraySerializable(): void
