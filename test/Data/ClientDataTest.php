@@ -15,8 +15,6 @@ class ClientDataTest extends TestCase
     public function setUp(): void
     {
         $this->subject = new ClientData();
-
-        parent::setUp();
     }
 
     public function testObjectImplementsArraySerializable(): void

@@ -16,8 +16,6 @@ class ConfigProviderTest extends TestCase
     protected function setUp(): void
     {
         $this->config = (new ConfigProvider())();
-
-        parent::setUp();
     }
 
     public function testHasDependencies(): void

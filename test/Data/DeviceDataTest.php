@@ -29,8 +29,6 @@ class DeviceDataTest extends TestCase
 
         $this->osData     = $this->createMock(OsData::class);
         $this->clientData = $this->createMock(ClientData::class);
-
-        parent::setUp();
     }
 
     public function testObjectImplementsArraySerializable(): void
