@@ -10,7 +10,6 @@ use Dot\UserAgentSniffer\Data\DeviceData;
 class DeviceService implements DeviceServiceInterface
 {
     protected DeviceDetector $deviceDetector;
-
     protected DeviceData $deviceData;
 
     public function __construct(DeviceDetector $deviceDetector, DeviceData $deviceData)

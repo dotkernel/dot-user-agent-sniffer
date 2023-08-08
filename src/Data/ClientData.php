@@ -16,10 +16,6 @@ class ClientData implements ArraySerializableInterface
     protected ?string $engineVersion = null;
     protected ?string $family        = null;
 
-    public function __construct()
-    {
-    }
-
     public function getType(): ?string
     {
         return $this->type;

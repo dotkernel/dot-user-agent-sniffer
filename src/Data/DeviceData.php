@@ -8,18 +8,18 @@ use Laminas\Stdlib\ArraySerializableInterface;
 
 class DeviceData implements ArraySerializableInterface
 {
+    protected ClientData $client;
+    protected OsData $os;
     protected ?string $type   = null;
     protected ?string $brand  = null;
     protected ?string $model  = null;
     protected ?bool $isBot    = null;
     protected ?bool $isMobile = null;
-    protected OsData $os;
-    protected ClientData $client;
 
     public function __construct()
     {
-        $this->os     = new OsData();
         $this->client = new ClientData();
+        $this->os     = new OsData();
     }
 
     public function getType(): ?string
@@ -71,6 +71,11 @@ class DeviceData implements ArraySerializableInterface
     }
 
     public function isMobile(): ?bool
+    {
+        return $this->isMobile;
+    }
+
+    public function getIsMobile(): ?bool
     {
         return $this->isMobile;
     }

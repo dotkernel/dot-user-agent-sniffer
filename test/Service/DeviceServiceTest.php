@@ -76,7 +76,7 @@ class DeviceServiceTest extends TestCase
 
     public function testBotUserAgent(): void
     {
-        $userAgent     = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
+        $userAgent     = 'Mozilla/5.0 (compatible; Googlebot/2.1; +https://www.google.com/bot.html)';
         $this->subject = new DeviceService(new DeviceDetector(), new DeviceData());
 
         $data = $this->subject->getDetails($userAgent);
