@@ -14,10 +14,6 @@ class OsData implements ArraySerializableInterface
     protected ?string $platform  = null;
     protected ?string $family    = null;
 
-    public function __construct()
-    {
-    }
-
     public function getName(): ?string
     {
         return $this->name;
