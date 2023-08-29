@@ -2,7 +2,7 @@
 DotKernel component based on [device-detector](https://github.com/matomo-org/device-detector), providing details about a device by parsing a user agent.
 
 ![OSS Lifecycle](https://img.shields.io/osslifecycle/dotkernel/dot-user-agent-sniffer)
-![PHP from Packagist (specify version)](https://img.shields.io/packagist/php-v/dotkernel/dot-user-agent-sniffer/3.3.0)
+![PHP from Packagist (specify version)](https://img.shields.io/packagist/php-v/dotkernel/dot-user-agent-sniffer/3.3.2)
 
 [![GitHub issues](https://img.shields.io/github/issues/dotkernel/dot-user-agent-sniffer)](https://github.com/dotkernel/dot-user-agent-sniffer/issues)
 [![GitHub forks](https://img.shields.io/github/forks/dotkernel/dot-user-agent-sniffer)](https://github.com/dotkernel/dot-user-agent-sniffer/network)
@@ -10,15 +10,17 @@ DotKernel component based on [device-detector](https://github.com/matomo-org/dev
 [![GitHub license](https://img.shields.io/github/license/dotkernel/dot-user-agent-sniffer)](https://github.com/dotkernel/dot-user-agent-sniffer/blob/3.0/LICENSE)
 
 [![Build Static](https://github.com/dotkernel/dot-user-agent-sniffer/actions/workflows/static-analysis.yml/badge.svg?branch=3.0)](https://github.com/dotkernel/dot-user-agent-sniffer/actions/workflows/static-analysis.yml)
+[![codecov](https://codecov.io/gh/dotkernel/dot-user-agent-sniffer/graph/badge.svg?token=HZKFRQWDSV)](https://codecov.io/gh/dotkernel/dot-user-agent-sniffer)
 
 [![SymfonyInsight](https://insight.symfony.com/projects/2e87cb23-ba35-4bef-a576-f9cb3a989ee9/big.svg)](https://insight.symfony.com/projects/2e87cb23-ba35-4bef-a576-f9cb3a989ee9)
+
 
 ## Install
 
 You can install this library by running the following command:
-```bash
-$ composer require dotkernel/dot-user-agent-sniffer
-```
+
+    composer require dotkernel/dot-user-agent-sniffer
+
 
 Before adding this library as a dependency to your service, you need to add `Dot\UserAgentSniffer\ConfigProvider::class,` to your application's `config/config.php` file.
 
