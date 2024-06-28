@@ -1,5 +1,9 @@
 # dot-user-agent-sniffer
 
+> dot-user-agent-sniffer is a wrapper on top of [matomo/device-detector](https://github.com/matomo-org/device-detector)
+>
+> ![OSS Lifecycle](https://img.shields.io/osslifecycle/matomo-org/device-detector)
+
 DotKernel component based on [device-detector](https://github.com/matomo-org/device-detector), providing details about a device by parsing a user agent.
 
 ![OSS Lifecycle](https://img.shields.io/osslifecycle/dotkernel/dot-user-agent-sniffer)
