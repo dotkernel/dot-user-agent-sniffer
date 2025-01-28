@@ -62,7 +62,7 @@ class DeviceServiceTest extends TestCase
 
     public function testValidUserAgent(): void
     {
-        $userAgent     = 'Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion';
+        $userAgent     = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0';
         $this->subject = new DeviceService(new DeviceDetector(), new DeviceData());
 
         $data = $this->subject->getDetails($userAgent);
