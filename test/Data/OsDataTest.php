@@ -19,16 +19,16 @@ class OsDataTest extends TestCase
 
     public function testObjectImplementsArraySerializable(): void
     {
-        $this->assertInstanceOf(ArraySerializableInterface::class, $this->subject);
+        $this->assertContainsOnlyInstancesOf(ArraySerializableInterface::class, [$this->subject]);
     }
 
     public function testSettersReturnsSelfInstance(): void
     {
-        $this->assertInstanceOf(OsData::class, $this->subject->setName('name'));
-        $this->assertInstanceOf(OsData::class, $this->subject->setShortName('short_name'));
-        $this->assertInstanceOf(OsData::class, $this->subject->setVersion('version'));
-        $this->assertInstanceOf(OsData::class, $this->subject->setPlatform('platform'));
-        $this->assertInstanceOf(OsData::class, $this->subject->setFamily('family'));
+        $this->assertSame(OsData::class, $this->subject->setName('name')::class);
+        $this->assertSame(OsData::class, $this->subject->setShortName('short_name')::class);
+        $this->assertSame(OsData::class, $this->subject->setVersion('version')::class);
+        $this->assertSame(OsData::class, $this->subject->setPlatform('platform')::class);
+        $this->assertSame(OsData::class, $this->subject->setFamily('family')::class);
     }
 
     public function testGettersReturnsCorrectData(): void

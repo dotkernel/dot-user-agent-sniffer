@@ -20,6 +20,6 @@ class DeviceServiceFactoryTest extends TestCase
         $container = $this->createMock(ContainerInterface::class);
 
         $service = (new DeviceServiceFactory())($container);
-        $this->assertInstanceOf(DeviceService::class, $service);
+        $this->assertSame(DeviceService::class, $service::class);
     }
 }

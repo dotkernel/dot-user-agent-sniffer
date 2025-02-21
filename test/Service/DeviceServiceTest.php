@@ -35,7 +35,6 @@ class DeviceServiceTest extends TestCase
 
         $data = $this->subject->getDetails($userAgent);
 
-        $this->assertInstanceOf(DeviceData::class, $data);
         $this->assertSame(self::TYPE_SMARTPHONE, $data->getType());
         $this->assertFalse($data->isBot());
         $this->assertTrue($data->isMobile());

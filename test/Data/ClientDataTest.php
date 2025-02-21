@@ -19,18 +19,18 @@ class ClientDataTest extends TestCase
 
     public function testObjectImplementsArraySerializable(): void
     {
-        $this->assertInstanceOf(ArraySerializableInterface::class, $this->subject);
+        $this->assertContainsOnlyInstancesOf(ArraySerializableInterface::class, [$this->subject]);
     }
 
     public function testSettersReturnsSelfInstance(): void
     {
-        $this->assertInstanceOf(ClientData::class, $this->subject->setType('type'));
-        $this->assertInstanceOf(ClientData::class, $this->subject->setName('name'));
-        $this->assertInstanceOf(ClientData::class, $this->subject->setShortName('short_name'));
-        $this->assertInstanceOf(ClientData::class, $this->subject->setVersion('version'));
-        $this->assertInstanceOf(ClientData::class, $this->subject->setEngine('engine'));
-        $this->assertInstanceOf(ClientData::class, $this->subject->setEngineVersion('engine_version'));
-        $this->assertInstanceOf(ClientData::class, $this->subject->setFamily('family'));
+        $this->assertSame(ClientData::class, $this->subject->setType('type')::class);
+        $this->assertSame(ClientData::class, $this->subject->setName('name')::class);
+        $this->assertSame(ClientData::class, $this->subject->setShortName('short_name')::class);
+        $this->assertSame(ClientData::class, $this->subject->setVersion('version')::class);
+        $this->assertSame(ClientData::class, $this->subject->setEngine('engine')::class);
+        $this->assertSame(ClientData::class, $this->subject->setEngineVersion('engine_version')::class);
+        $this->assertSame(ClientData::class, $this->subject->setFamily('family')::class);
     }
 
     public function testGettersReturnsCorrectData(): void
