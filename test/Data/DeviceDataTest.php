@@ -33,18 +33,18 @@ class DeviceDataTest extends TestCase
 
     public function testObjectImplementsArraySerializable(): void
     {
-        $this->assertInstanceOf(ArraySerializableInterface::class, $this->subject);
+        $this->assertContainsOnlyInstancesOf(ArraySerializableInterface::class, [$this->subject]);
     }
 
     public function testSettersReturnsSelfInstance(): void
     {
-        $this->assertInstanceOf(DeviceData::class, $this->subject->setType('type'));
-        $this->assertInstanceOf(DeviceData::class, $this->subject->setBrand('brand'));
-        $this->assertInstanceOf(DeviceData::class, $this->subject->setModel('model'));
-        $this->assertInstanceOf(DeviceData::class, $this->subject->setIsBot(false));
-        $this->assertInstanceOf(DeviceData::class, $this->subject->setIsMobile(false));
-        $this->assertInstanceOf(DeviceData::class, $this->subject->setOs($this->osData));
-        $this->assertInstanceOf(DeviceData::class, $this->subject->setClient($this->clientData));
+        $this->assertSame(DeviceData::class, $this->subject->setType('type')::class);
+        $this->assertSame(DeviceData::class, $this->subject->setBrand('brand')::class);
+        $this->assertSame(DeviceData::class, $this->subject->setModel('model')::class);
+        $this->assertSame(DeviceData::class, $this->subject->setIsBot(false)::class);
+        $this->assertSame(DeviceData::class, $this->subject->setIsMobile(false)::class);
+        $this->assertSame(DeviceData::class, $this->subject->setOs($this->osData)::class);
+        $this->assertSame(DeviceData::class, $this->subject->setClient($this->clientData)::class);
     }
 
     public function testGettersReturnsCorrectData(): void
