@@ -12,7 +12,7 @@ nav:
       - Installation: v3/installation.md
       - Usage: v3/usage.md
 site_name: dot-user-agent-sniffer
-site_description: "Dotkernel's component based on device-detector, providing details about a device by parsing a user agent."
+site_description: "Dotkernel's component based on matomo/device-detector, providing details about a device by parsing a user agent."
 repo_url: "https://github.com/dotkernel/dot-user-agent-sniffer"
 plugins:
   - search

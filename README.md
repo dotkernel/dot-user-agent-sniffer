@@ -1,8 +1,8 @@
 # dot-user-agent-sniffer
 
-Dotkernel's component based on device-detector, providing details about a device by parsing a user agent.
+Dotkernel component based on matomo/device-detector, providing details about a device by parsing a user agent.
 
-> dot-user-agent-sniffer is a wrapper on top of [matomo/device-detector](https://github.com/matomo-org/device-detector)
+> `dotkernel/dot-user-agent-sniffer` is a wrapper on top of [matomo/device-detector](https://github.com/matomo-org/device-detector)
 
 ## Documentation
 
