@@ -24,8 +24,8 @@ class DeviceServiceTest extends TestCase
     {
         $userAgent = 'fake user agent';
 
-        $deviceDetectorMock = $this->createMock(DeviceDetector::class);
-        $deviceDataMock     = $this->createMock(DeviceData::class);
+        $deviceDetectorMock = $this->createStub(DeviceDetector::class);
+        $deviceDataMock     = $this->createStub(DeviceData::class);
 
         $deviceDataMock->method('getType')->willReturn('smartphone');
         $deviceDataMock->method('isMobile')->willReturn(true);

@@ -9,16 +9,16 @@ use Dot\UserAgentSniffer\Data\DeviceData;
 use Dot\UserAgentSniffer\Data\OsData;
 use Laminas\Stdlib\ArraySerializableInterface;
 use PHPUnit\Framework\MockObject\Exception;
-use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 
 class DeviceDataTest extends TestCase
 {
     private DeviceData $subject;
 
-    private OsData|MockObject $osData;
+    private OsData|Stub $osData;
 
-    private ClientData|MockObject $clientData;
+    private ClientData|Stub $clientData;
 
     /**
      * @throws Exception
@@ -27,8 +27,8 @@ class DeviceDataTest extends TestCase
     {
         $this->subject = new DeviceData();
 
-        $this->osData     = $this->createMock(OsData::class);
-        $this->clientData = $this->createMock(ClientData::class);
+        $this->osData     = $this->createStub(OsData::class);
+        $this->clientData = $this->createStub(ClientData::class);
     }
 
     public function testObjectImplementsArraySerializable(): void
