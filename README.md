@@ -18,9 +18,9 @@ Documentation is available at: https://docs.dotkernel.org/dot-user-agent-sniffer
 [![GitHub stars](https://img.shields.io/github/stars/dotkernel/dot-user-agent-sniffer)](https://github.com/dotkernel/dot-user-agent-sniffer/stargazers)
 [![GitHub license](https://img.shields.io/github/license/dotkernel/dot-user-agent-sniffer)](https://github.com/dotkernel/dot-user-agent-sniffer/blob/3.0/LICENSE)
 
-[![Build Static](https://github.com/dotkernel/dot-user-agent-sniffer/actions/workflows/continuous-integration.yml/badge.svg?branch=3.0)](https://github.com/dotkernel/dot-user-agent-sniffer/actions/workflows/continuous-integration.yml)
+[![Build Static](https://github.com/dotkernel/dot-user-agent-sniffer/actions/workflows/continuous-integration.yml/badge.svg?branch=3.x)](https://github.com/dotkernel/dot-user-agent-sniffer/actions/workflows/continuous-integration.yml)
 [![codecov](https://codecov.io/gh/dotkernel/dot-user-agent-sniffer/graph/badge.svg?token=HZKFRQWDSV)](https://codecov.io/gh/dotkernel/dot-user-agent-sniffer)
-[![PHPStan](https://github.com/dotkernel/dot-user-agent-sniffer/actions/workflows/static-analysis.yml/badge.svg?branch=3.0)](https://github.com/dotkernel/dot-user-agent-sniffer/actions/workflows/static-analysis.yml)
+[![PHPStan](https://github.com/dotkernel/dot-user-agent-sniffer/actions/workflows/static-analysis.yml/badge.svg?branch=3.x)](https://github.com/dotkernel/dot-user-agent-sniffer/actions/workflows/static-analysis.yml)
 
 ## Install
 
